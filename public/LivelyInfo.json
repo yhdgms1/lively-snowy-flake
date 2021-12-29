@@ -1,0 +1,14 @@
+{
+  "AppVersion": "1.7.x.x",
+  "Title": "Snowy Flake",
+  "Thumbnail": "thumbnail.jpg",
+  "Preview": "thumbnail.jpg",
+  "Desc": "Snowflakes with any background!",
+  "Author": "Artemiy69",
+  "License": "MIT",
+  "Contact": "https://github.com/rocksdanister/weather-fetch-wallpaper",
+  "Type": 1,
+  "FileName": "index.html",
+  "Arguments": null,
+  "IsAbsolutePath": false
+}

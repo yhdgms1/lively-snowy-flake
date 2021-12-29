@@ -1,0 +1,39 @@
+{
+  "backgroundImage": {
+    "text": "Background Image URL",
+    "type": "textbox",
+    "value": "https://i.imgur.com/x4jMLU7.jpg"
+  },
+  "snowflakesCount": {
+    "max": 250,
+    "min": 1,
+    "tick": 1,
+    "text": "Snowflakes Count",
+    "type": "slider",
+    "value": 100
+  },
+  "snowflakesAngle": {
+    "max": 360,
+    "min": -360,
+    "tick": 1,
+    "text": "Snowflakes Angle",
+    "type": "slider",
+    "value": 0
+  },
+  "snowflakeSize": {
+    "max": 20,
+    "min": 1,
+    "tick": 1,
+    "text": "Snowflakes Size",
+    "type": "slider",
+    "value": 10
+  },
+  "snowflakeSpeed": {
+    "max": 40,
+    "min": 1,
+    "tick": 1,
+    "text": "Snowflake Speed",
+    "type": "slider",
+    "value": 5
+  }
+}
