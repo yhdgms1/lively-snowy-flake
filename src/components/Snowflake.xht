@@ -1,47 +1,39 @@
 <script>
-  import { css, keyframes } from 'goober'; //!no-autosubscribe
   import { randNum } from '../utils/randNum'; //!no-autosubscribe
+  import { createAnimation } from '../utils/createAnimation'; //!no-autosubscribe
 
-  export let snowflakeSize = 1;
   export let snowflakeSpeed = 1;
 
-  $: snowflakeCN = css`
-    position: absolute;
-    width: ${snowflakeSize / 10}rem;
-    height: ${snowflakeSize / 10}rem;
-    background: linear-gradient(white, white);
-    border-radius: 9999px;
-    filter: drop-shadow(0 0 ${snowflakeSize / 10}rem white);
-  `;
+  const animationAction = (element, speed) => {
+    let animation = createAnimation(element, snowflakeSpeed);
 
-  const opacity = Math.random() * 0.5 + 0.5;
-  const x = Math.random() * 100;
-  const offset = randNum(-20, 20);
-
-  const from = Math.random() * 100, y = from;
-
-  const scale = Math.random() * 0.5 + 0.5;
-
-  const fallDelay = randNum(0, 30) * (-1);
-  
-  $: fallDuration = randNum(10, 30) / snowflakeSpeed;
-
-  $: animation = keyframes`
-    ${from}% {
-      transform: translate(${x + offset}vw, ${y}vh) scale(${scale});
+    return {
+      update(){
+        animation.cancel();
+        animation = createAnimation(element, snowflakeSpeed);
+      },
+      destroy(){
+        animation.cancel();
+      }
     }
-
-    to {
-      transform: translate(${((x + offset) / 2)}vw, 100vh) scale(${scale});
-    }
-  `;
-
-  $: className = css`
-    opacity: ${opacity};
-    transform: translate(${x}vw, -${snowflakeSize / 10}rem) scale(${scale});
-    animation: ${animation} ${fallDuration}s ${fallDelay}s linear infinite;
-  `;
+  }
 
 </script>
 
-<div class="{snowflakeCN} {className}"></div>
+<div 
+  *animationAction={snowflakeSpeed} 
+  class="snowflake" 
+  style="--scale: {Math.random() + 0.5}"
+/>
+
+<style>
+  .snowflake {
+    position: absolute;
+    width: var(--snowflake-size);
+    height: var(--snowflake-size);
+    background: linear-gradient(white, white);
+    border-radius: 9999px;
+    filter: drop-shadow(0 0 var(--snowflake-size) white);
+    transform: scale(var(--scale));
+  }
+</style>

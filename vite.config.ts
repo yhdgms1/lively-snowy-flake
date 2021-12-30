@@ -1,10 +1,12 @@
 import { defineConfig } from "vite";
 import { vitePlugin as malinaPlugin } from "malinajs-unplugin";
 
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
   return {
     plugins: [
-      malinaPlugin(),
+      malinaPlugin({
+        css: mode === 'development',
+      }),
     ],
   };
 });

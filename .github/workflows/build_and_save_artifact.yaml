@@ -6,6 +6,7 @@ on:
 
 jobs:
   build_and_save_artifact:
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

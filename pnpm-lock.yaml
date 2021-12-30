@@ -1,7 +1,6 @@
 lockfileVersion: 5.3
 
 specifiers:
-  goober: ^2.1.1
   malinajs: ^0.7.0-alpha
   malinajs-unplugin: ^0.0.16
   storxy: ^0.1.9
@@ -9,7 +8,6 @@ specifiers:
   vite: ^2.7.2
 
 dependencies:
-  goober: 2.1.1
   malinajs: 0.7.0-alpha
   storxy: 0.1.9
 
@@ -210,12 +208,6 @@ packages:
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
-
-  /goober/2.1.1:
-    resolution: {integrity: sha512-TkGCqHxE4g5DtdpwxFCi53bXRtvw0BoSgCihVSIOioe9kfkqin5wXG8BQKykN0tjzmxZJ81qU2KWinZf5qKVlw==}
-    peerDependencies:
-      csstype: ^2.6.2
-    dev: false
 
   /has/1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}

@@ -1,22 +1,26 @@
 <script>
-  import { css, keyframes } from 'goober';  //!no-autosubscribe
   import Snowflake from './components/Snowflake.xht';
   import { settings } from "./store/settings";
 
   $: settings.$.backgroundImage, () => document.body.style.setProperty('--background-image', 'url("' + settings.$.backgroundImage + '")');
-
-  $: container = css`
-    width: 100%;
-    height: 100vh;
-    transform: scale(1.5) rotate(${settings.$.snowflakesAngle}deg);
-  `;
 </script>
 
-<div class={container}>
+<div class="container" style="--rotation: {settings.$.snowflakesAngle}deg; --snowflake-size: {settings.$.snowflakeSize / 10}rem">
   {#each settings.$.snowflakesCount as i}
-    <Snowflake 
-      snowflakeSize={settings.$.snowflakeSize} 
+    <Snowflake
       snowflakeSpeed={settings.$.snowflakeSpeed}
     />
   {/each}
 </div>
+
+<style>
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    transform: scale(1.5) rotate(var(--rotation));
+  }
+</style>
