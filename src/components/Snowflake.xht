@@ -43,7 +43,6 @@
 <div 
   #element
   class="snowflake {snowfallType === 1 ? 'snowflake-icon' : 'snowflake-default'}" 
-  style="--scale: {Math.random() + 0.5}"
 />
 
 <style>
@@ -51,7 +50,6 @@
     position: absolute;
     width: var(--snowflake-size);
     height: var(--snowflake-size);
-    transform: scale(var(--scale));
   }
 
   .snowflake-default {
