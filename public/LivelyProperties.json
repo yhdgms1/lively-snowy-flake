@@ -29,11 +29,20 @@
     "value": 10
   },
   "snowflakeSpeed": {
-    "max": 40,
+    "max": 100,
     "min": 1,
     "tick": 1,
     "text": "Snowflake Speed",
     "type": "slider",
-    "value": 5
+    "value": 10
+  },
+  "snowfallType": {
+    "type": "dropdown",
+    "value": 0,
+    "text": "Snowfall Type",
+    "items": [
+      "Default",
+      "Another"
+    ]
   }
 }

@@ -21,6 +21,10 @@ interface Settings {
    * Snowflake speed
    */
   snowflakeSpeed: number;
+  /**
+   * Type of snowfall
+   */
+  snowfallType: 0 | 1;
 }
 
 export const settings = createStore<Settings>({
@@ -28,11 +32,12 @@ export const settings = createStore<Settings>({
   snowflakesCount: 100,
   snowflakesAngle: 0,
   snowflakeSize: 5,
-  snowflakeSpeed: 5,
+  snowflakeSpeed: 10,
+  snowfallType: 0,
 });
 
 window.livelyPropertyListener = (name, value) => {
-  if (["backgroundImage", "snowflakesCount", "snowflakesAngle", "snowflakeSize", "snowflakeSpeed"].includes(name)) {
+  if (["backgroundImage", "snowflakesCount", "snowflakesAngle", "snowflakeSize", "snowflakeSpeed", "snowfallType"].includes(name)) {
     //@ts-ignore
     settings.$[name] = value;
   }
