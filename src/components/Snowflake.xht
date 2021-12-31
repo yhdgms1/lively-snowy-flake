@@ -1,28 +1,47 @@
 <script>
   import { randNum } from '../utils/randNum'; //!no-autosubscribe
-  import { createAnimation } from '../utils/createAnimation'; //!no-autosubscribe
+  import { 
+    createAnimation,
+    createDefaultKeyframes,
+    createDefaultOptions,
+    createAnotherKeyframes,
+    createAnotherOptions,
+  } from '../utils/createAnimation'; //!no-autosubscribe
+
+  const isAnimation = (animation) => animation instanceof Animation;
 
   export let snowflakeSpeed = 1;
   export let snowfallType = 0;
 
-  const animationAction = (element, speed, type) => {
-    let animation = createAnimation(element, snowflakeSpeed, snowfallType);
+  let element;
+  let animation;
 
-    return {
-      update(speed, type) {
-        animation.cancel();
-        animation = createAnimation(element, speed, type);
-      },
-      destroy(){
-        animation.cancel();
-      }
+  $tick().then(() => {
+    animation = createAnimation(
+      element,
+      snowfallType === 0 ? createDefaultKeyframes() : createAnotherKeyframes(),
+      snowfallType === 0 ? createDefaultOptions() : createAnotherOptions()
+    );
+    animation.playbackRate = snowflakeSpeed / 10;
+  });
+
+  $: snowflakeSpeed, () => {
+    if (isAnimation(animation)) {
+      animation.playbackRate = snowflakeSpeed / 10;
+    }
+  }
+
+  $: snowfallType, () => {
+    if (isAnimation(animation)) {
+      const keyframes = snowfallType === 0 ? createDefaultKeyframes() : createAnotherKeyframes();
+      animation.effect.setKeyframes(keyframes);
     }
   }
 
 </script>
 
 <div 
-  *animationAction={snowflakeSpeed, snowfallType} 
+  #element
   class="snowflake {snowfallType === 1 ? 'snowflake-icon' : 'snowflake-default'}" 
   style="--scale: {Math.random() + 0.5}"
 />

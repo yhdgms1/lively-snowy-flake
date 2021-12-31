@@ -13,7 +13,7 @@
     "vite": "^2.7.2"
   },
   "dependencies": {
-    "malinajs": "^0.7.0-alpha",
+    "malinajs": "^0.7.1-alpha",
     "storxy": "^0.1.9"
   }
 }
