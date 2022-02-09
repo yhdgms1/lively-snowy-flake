@@ -8,12 +8,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "malinajs-unplugin": "^0.0.16",
+    "malinajs-unplugin": "^0.0.18",
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
   },
   "dependencies": {
-    "malinajs": "^0.7.1-alpha",
+    "malinajs": "^0.7.0-a2",
     "storxy": "^0.1.9"
   }
 }

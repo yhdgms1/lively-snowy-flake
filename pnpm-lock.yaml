@@ -1,18 +1,18 @@
 lockfileVersion: 5.3
 
 specifiers:
-  malinajs: ^0.7.1-alpha
-  malinajs-unplugin: ^0.0.16
+  malinajs: ^0.7.0-a2
+  malinajs-unplugin: ^0.0.18
   storxy: ^0.1.9
   typescript: ^4.4.4
   vite: ^2.7.2
 
 dependencies:
-  malinajs: 0.7.1-alpha
+  malinajs: 0.7.0-alpha
   storxy: 0.1.9
 
 devDependencies:
-  malinajs-unplugin: 0.0.16_malinajs@0.7.1-alpha+vite@2.7.9
+  malinajs-unplugin: 0.0.18_malinajs@0.7.0-alpha+vite@2.7.9
   typescript: 4.5.4
   vite: 2.7.9
 
@@ -222,12 +222,12 @@ packages:
       has: 1.0.3
     dev: true
 
-  /malinajs-unplugin/0.0.16_malinajs@0.7.1-alpha+vite@2.7.9:
-    resolution: {integrity: sha512-m3V0GfQi/ZEywU7U16C80DGSX+Ew9VuWKHhCycTkS5W3f4M9XIYicQCCVlVi+5MyoAAO07DKH27oVfggqppZKQ==}
+  /malinajs-unplugin/0.0.18_malinajs@0.7.0-alpha+vite@2.7.9:
+    resolution: {integrity: sha512-Vd4gRQGU7Rt7FPfCXIUHU+5jXu5dBuGETA8yogo1kyPYQ9rDYg9GmTSDilLV2KKAsVFFl1ffHgF7qzcRG6f7+Q==}
     peerDependencies:
-      malinajs: ^0.6.42
+      malinajs: '*'
     dependencies:
-      malinajs: 0.7.1-alpha
+      malinajs: 0.7.0-alpha
       picomatch: 2.3.0
       unplugin: 0.3.0_vite@2.7.9
     transitivePeerDependencies:
@@ -237,8 +237,8 @@ packages:
       - webpack
     dev: true
 
-  /malinajs/0.7.1-alpha:
-    resolution: {integrity: sha512-YEqG2TlU+cAcCRNY/6jYLPeGypcRItgm3rUC7ICloe7bCMUz6QaHo1GrTBKZfUA9qciil/zSpQYBPTBrkpBdtw==}
+  /malinajs/0.7.0-alpha:
+    resolution: {integrity: sha512-pGBw68ZMAen3DBR0/TlPyDqNM2L0fSjHOgk2ssIADoIFV2VNKIjqATkRJcgRfoXK3mMqfKxvZxmaqFgZGQ4kyg==}
     dependencies:
       acorn: 7.4.1
       astring: 1.8.1
